@@ -18,22 +18,22 @@ import * as qrService from '../../services/qr.service';
 // Estilos del documento PDF
 const pdfStyles = StyleSheet.create({
   page: {
-    padding: 10,
+    padding: 20,
     backgroundColor: '#f8fafc',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
   card: {
-    width: 242.6, // 8.5 cm (ID-1 / CR-80)
-    height: 153, // 5.4 cm
+    width: '100%',
+    height: '100%',
     backgroundColor: '#0f172a', // Deep dark slate
-    borderRadius: 8,
-    padding: 10,
+    borderRadius: 16,
+    padding: 24,
     display: 'flex',
     flexDirection: 'row',
     color: '#ffffff',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#38bdf8', // Sky accent border
   },
   leftCol: {
@@ -41,7 +41,7 @@ const pdfStyles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    paddingRight: 6,
+    paddingRight: 14,
   },
   rightCol: {
     flex: 1,
@@ -51,47 +51,47 @@ const pdfStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 10,
+    fontSize: 22,
     fontWeight: 'bold',
     color: '#38bdf8',
-    letterSpacing: 0.5,
+    letterSpacing: 1,
   },
   name: {
-    fontSize: 9,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#ffffff',
-    marginTop: 6,
+    marginTop: 12,
     maxLines: 2,
   },
   metaLabel: {
-    fontSize: 6,
+    fontSize: 13,
     color: '#94a3b8',
-    marginTop: 4,
+    marginTop: 8,
   },
   metaValue: {
-    fontSize: 7,
+    fontSize: 15,
     fontWeight: 'bold',
     color: '#ffffff',
   },
   emergencyText: {
-    fontSize: 5,
+    fontSize: 11,
     color: '#ef4444', // Red alert
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 4,
+    marginTop: 8,
   },
   qrImage: {
-    width: 60,
-    height: 60,
+    width: 130,
+    height: 130,
     backgroundColor: '#ffffff',
-    padding: 2,
-    borderRadius: 3,
+    padding: 6,
+    borderRadius: 6,
   },
   footer: {
-    fontSize: 5,
+    fontSize: 11,
     color: '#64748b',
     textAlign: 'left',
-    marginTop: 4,
+    marginTop: 8,
   },
 });
 
@@ -114,7 +114,7 @@ const MedicalCardPDF: React.FC<PDFProps> = ({
   qrDataUrl,
 }) => (
   <Document>
-    <Page size={[250, 160]} style={pdfStyles.page}>
+    <Page size="A5" orientation="landscape" style={pdfStyles.page}>
       <View style={pdfStyles.card}>
         <View style={pdfStyles.leftCol}>
           <View>
@@ -157,7 +157,7 @@ export const QRCard: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [qrBase64, setQrBase64] = useState<string>('');
   const [regenerating, setRegenerating] = useState(false);
-  
+
   const qrRef = useRef<HTMLDivElement>(null);
 
   const qrUrl = `${window.location.origin}/ficha/${user?.qr_token}`;
