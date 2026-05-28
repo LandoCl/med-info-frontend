@@ -80,7 +80,7 @@ export const Dashboard: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Activity className="text-purple-600" size={24} />
-            <span className="font-black text-slate-900 dark:text-slate-100 tracking-tight">QR Médico</span>
+            <span className="font-black text-slate-900 dark:text-slate-100 tracking-tight">TAG Médico</span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -134,7 +134,7 @@ export const Dashboard: React.FC = () => {
 
           {/* Columna Derecha: Resumen de Expediente y Contactos */}
           <div className="lg:col-span-2 space-y-8">
-            
+
             {/* Resumen Clínico */}
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
               <h3 className="text-sm font-bold text-slate-950 dark:text-slate-50 flex items-center gap-2 border-b border-slate-100 dark:border-slate-850 pb-2.5">
@@ -268,11 +268,10 @@ export const Dashboard: React.FC = () => {
                   contacts.map((c) => (
                     <div
                       key={c.id}
-                      className={`p-4 rounded-xl border flex items-center justify-between gap-4 ${
-                        c.es_principal
+                      className={`p-4 rounded-xl border flex items-center justify-between gap-4 ${c.es_principal
                           ? 'border-purple-200 dark:border-purple-900 bg-purple-50/20 dark:bg-purple-950/10'
                           : 'border-slate-200 dark:border-slate-800'
-                      }`}
+                        }`}
                     >
                       <div className="space-y-1">
                         <div className="flex items-center gap-2 flex-wrap">

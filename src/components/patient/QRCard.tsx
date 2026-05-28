@@ -139,7 +139,7 @@ const MedicalCardPDF: React.FC<PDFProps> = ({
               </>
             )}
           </View>
-          <Text style={pdfStyles.footer}>QR Médico - Prototipo de Emergencias</Text>
+          <Text style={pdfStyles.footer}>TAG Médico - Prototipo</Text>
         </View>
         <View style={pdfStyles.rightCol}>
           {qrDataUrl && <Image style={pdfStyles.qrImage} src={qrDataUrl} />}

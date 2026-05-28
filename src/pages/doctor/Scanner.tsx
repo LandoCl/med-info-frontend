@@ -14,7 +14,7 @@ export const Scanner: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Activity className="text-purple-600" size={24} />
-            <span className="font-black text-slate-900 dark:text-slate-100 tracking-tight">QR Médico</span>
+            <span className="font-black text-slate-900 dark:text-slate-100 tracking-tight">TAG Médico</span>
             <Badge variant="danger" className="gap-1 font-bold text-[10px] py-0.5">
               <ShieldAlert size={10} /> MÓDULO MÉDICO
             </Badge>

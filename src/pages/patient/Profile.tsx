@@ -14,7 +14,7 @@ export const Profile: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Activity className="text-purple-600" size={24} />
-            <span className="font-black text-slate-900 dark:text-slate-100 tracking-tight">QR Médico</span>
+            <span className="font-black text-slate-900 dark:text-slate-100 tracking-tight">TAG Médico</span>
           </div>
           <Button variant="ghost" size="sm" onClick={() => navigate('/dashboard')} className="text-xs font-bold gap-1">
             <ArrowLeft size={14} />

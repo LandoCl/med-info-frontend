@@ -33,7 +33,7 @@ export const Login: React.FC = () => {
     try {
       await login(data);
       navigate('/dashboard');
-    } catch (err: any) {
+    } catch (err) {
       setGeneralError(err.response?.data?.message || 'Credenciales incorrectas. Intenta de nuevo.');
     }
   };
@@ -46,7 +46,7 @@ export const Login: React.FC = () => {
           <div className="p-3 bg-purple-100 dark:bg-purple-950/30 text-purple-600 rounded-full mb-3">
             <Activity size={32} />
           </div>
-          <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tight">QR Médico</h2>
+          <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tight">TAG Médico</h2>
           <p className="text-xs text-slate-500 mt-1">Expediente Clínico Móvil de Emergencia</p>
         </div>
 
@@ -66,7 +66,7 @@ export const Login: React.FC = () => {
             error={errors.email?.message}
             {...register('email')}
           />
-          
+
           <div className="space-y-1">
             <Input
               label="Contraseña"

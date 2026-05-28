@@ -26,8 +26,8 @@ export const PatientSheet: React.FC = () => {
       try {
         const response = await qrService.getMedicalSheet(token);
         setSheet(response);
-      } catch (err: any) {
-        console.error(err);
+      } catch (err) {
+        console.log(err);
         setError(err.response?.data?.message || 'No se pudo recuperar la ficha médica. Es posible que el código QR haya vencido o sea incorrecto.');
       } finally {
         setIsLoading(false);
@@ -44,7 +44,7 @@ export const PatientSheet: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 py-3.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Activity size={24} className="text-white animate-pulse" />
-            <span className="font-black text-white tracking-tight text-lg">QR Médico — EMERGENCIA</span>
+            <span className="font-black text-white tracking-tight text-lg">TAG Médico — EMERGENCIA</span>
           </div>
           <Button
             variant="ghost"
