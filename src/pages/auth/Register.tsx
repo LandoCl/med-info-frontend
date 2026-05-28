@@ -46,7 +46,7 @@ export const Register: React.FC = () => {
       };
       await signup(cleaned);
       navigate('/dashboard');
-    } catch (err) {
+    } catch (err: any) {
       setGeneralError(err.response?.data?.message || 'Error al realizar el registro. Intenta de nuevo.');
     }
   };

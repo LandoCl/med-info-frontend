@@ -26,7 +26,7 @@ export const PatientSheet: React.FC = () => {
       try {
         const response = await qrService.getMedicalSheet(token);
         setSheet(response);
-      } catch (err) {
+      } catch (err: any) {
         console.log(err);
         setError(err.response?.data?.message || 'No se pudo recuperar la ficha médica. Es posible que el código QR haya vencido o sea incorrecto.');
       } finally {

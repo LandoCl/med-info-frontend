@@ -33,7 +33,7 @@ export const Login: React.FC = () => {
     try {
       await login(data);
       navigate('/dashboard');
-    } catch (err) {
+    } catch (err: any) {
       setGeneralError(err.response?.data?.message || 'Credenciales incorrectas. Intenta de nuevo.');
     }
   };
